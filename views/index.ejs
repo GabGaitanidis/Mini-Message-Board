@@ -8,16 +8,8 @@
   </head>
   <body>
     <div class="container">
-      <div class="message-container">
-        <% for (let i = 0; i < messages.length; i++) { %>
-        <div class="message">
-          <h1>From: <%= messages[i].user %></h1>
-          <p><%= messages[i].text %></p>
-          <sub><%= messages[i].added %></sub>
-        </div>
-        <% } %>
-      </div>
-      <%- include('form') -%>
+      <div class="message-container"><%- include('messages') -%></div>
+      <a href="/new">Send </a>
     </div>
   </body>
 </html>

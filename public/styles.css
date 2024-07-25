@@ -6,6 +6,7 @@ body {
   padding: 0;
   height: 100%;
   box-sizing: border-box;
+  background-color: #333;
 }
 
 .container {
@@ -25,19 +26,22 @@ footer {
   width: 100%;
   background-color: #333;
   color: #fff;
-  padding: 10px;
   box-sizing: border-box;
 }
 
 form {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 80%;
+  margin: 0 auto;
+  gap: 10px;
 }
-
-input[type="text"] {
-  padding: 10px;
-  margin-bottom: 10px;
+footer h1 {
+  text-align: center;
+}
+input[type="text"],
+textarea {
+  padding: 20px;
   border: none;
   border-radius: 4px;
   box-sizing: border-box;
@@ -48,8 +52,9 @@ input[type="text"] {
   gap: 10px;
 }
 
-.send-area input[type="text"] {
+textarea {
   flex: 1;
+  resize: none;
 }
 
 .send-area button {
@@ -68,6 +73,29 @@ input[type="text"] {
 .message {
   border: 1px solid #ccc;
   margin-bottom: 10px;
-  padding: 10px;
   border-radius: 4px;
+  padding: 10px;
+  color: white;
+}
+p {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+
+a {
+  background-color: #0e3d70;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  font-size: 25px;
+}
+.footer-container {
+  height: 100vh;
+  background-color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
