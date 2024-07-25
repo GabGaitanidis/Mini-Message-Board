@@ -1,19 +1,23 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Message App</title>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="message-container">
-      <% for (let i = 0; i < messages.length; i++) { %>
-      <div class="message">
-        <h1><%= messages[i].user %></h1>
-        <p><%= messages[i].text %></p>
-        <sub><%= messages[i].added %></sub>
+    <div class="container">
+      <div class="message-container">
+        <% for (let i = 0; i < messages.length; i++) { %>
+        <div class="message">
+          <h1>From: <%= messages[i].user %></h1>
+          <p><%= messages[i].text %></p>
+          <sub><%= messages[i].added %></sub>
+        </div>
+        <% } %>
       </div>
-      <% } %>
-      <button>
-        <a href="/new">Send a message!</a>
-      </button>
+      <%- include('form') -%>
     </div>
   </body>
 </html>
