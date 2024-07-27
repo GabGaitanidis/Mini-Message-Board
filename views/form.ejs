@@ -10,13 +10,14 @@
     <div class="footer-container">
       <footer>
         <h1>Send message</h1>
+
         <form method="POST" action="/" id="messageForm">
+          <%- include("errors.ejs") %>
           <input
             type="text"
             id="i1"
             name="messageUser"
             placeholder="Your name"
-            required
           />
           <div class="send-area">
             <textarea

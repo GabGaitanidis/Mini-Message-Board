@@ -1,6 +1,7 @@
 const epxress = require("express");
 const router = epxress.Router();
 const format = require("../controllers/formatTime");
+const { body, validationResult } = require("express-validator");
 
 const messages = [
   {
@@ -21,12 +22,22 @@ router.get("/", (req, res) => {
 router.get("/new", (req, res) => {
   res.render("form", { messages: messages });
 });
-router.post("/", (req, res) => {
-  messages.push({
-    text: req.body.messageText,
-    user: req.body.messageUser,
-    added: format(new Date()),
-  });
-  res.redirect("/");
-});
+router.post(
+  "/",
+  body("messageUser").notEmpty().escape().withMessage("Name cannot be empty"),
+  (req, res) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).render("form", {
+        errors: errors.array(),
+      });
+    }
+    messages.push({
+      text: req.body.messageText,
+      user: req.body.messageUser,
+      added: format(new Date()),
+    });
+    res.redirect("/");
+  }
+);
 module.exports = router;
