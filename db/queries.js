@@ -4,6 +4,7 @@ async function getMessages() {
   const result = await pool.query(`
     SELECT id, username, msg, TO_CHAR(date, 'YYYY-MM-DD HH24:MI') AS date
     FROM msgs
+    ORDER BY date 
   `);
   const messages = result.rows;
   return messages;
