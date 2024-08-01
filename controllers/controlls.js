@@ -2,7 +2,6 @@ const { validationResult } = require("express-validator");
 const db = require("../db/queries");
 async function displayMsgs(req, res) {
   const msgs = await db.getMessages();
-  console.log(msgs);
   res.render("index", { messages: msgs });
 }
 async function addMessages(req, res) {
