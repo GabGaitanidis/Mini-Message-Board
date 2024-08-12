@@ -1,21 +1,26 @@
 {
-  "name": "mini-message-board",
+  "name": "message-board",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node app.js",
+    "start": "nodemon db.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^22.2.0",
+    "nodemon": "^3.1.4",
+    "prisma": "^5.18.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4"
+  },
   "dependencies": {
-    "dotenv": "^16.4.5",
+    "@prisma/client": "^5.18.0",
     "ejs": "^3.1.10",
     "express": "^4.19.2",
-    "express-async-handler": "^1.2.0",
-    "express-validator": "^7.1.0",
-    "pg": "^8.12.0"
+    "express-validator": "^7.2.0"
   }
 }

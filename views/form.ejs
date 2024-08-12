@@ -11,19 +11,14 @@
       <footer>
         <h1>Send message</h1>
 
-        <form method="POST" action="/" id="messageForm">
+        <form method="POST" action="/new" id="messageForm">
           <%- include("errors.ejs") %>
-          <input
-            type="text"
-            id="i1"
-            name="messageUser"
-            placeholder="Your name"
-          />
+          <input type="text" id="i1" name="username" placeholder="Your name" />
           <div class="send-area">
             <textarea
               type="text"
               id="i2"
-              name="messageText"
+              name="msg"
               placeholder="Send message..."
             ></textarea>
             <button type="submit">Send</button>

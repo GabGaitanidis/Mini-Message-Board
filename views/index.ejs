@@ -8,8 +8,17 @@
   </head>
   <body>
     <div class="container">
-      <div class="message-container"><%- include('messages') -%></div>
+      <div class="message-container">
+        <% messages.forEach(message => { %>
+        <div class="message">
+          <h1 class="message-user">From: <%= message.username %></h1>
+          <p class="message-text"><%= message.msg %></p>
+          <sub><%= message.date %></sub>
+        </div>
+        <% }); %>
+      </div>
       <a href="/new">Send </a>
     </div>
+    <h1>11</h1>
   </body>
 </html>
